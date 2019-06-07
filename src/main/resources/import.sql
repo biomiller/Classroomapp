@@ -1,5 +1,7 @@
-INSERT INTO TRAINEE(traineeID,traineeName, classroomID) VALUES (1, 'Joe Bloggs',2);
-INSERT INTO TRAINEE(traineeID,traineeName, classroomID) VALUES (2, 'Jane Bloggs',3);
+INSERT INTO CLASSROOM(classroomID,trainer) VALUES (1,'Matt Hunt');
+
+INSERT INTO TRAINEE(traineeID,traineeName) VALUES (1,'Joe Bloggs');
+INSERT INTO TRAINEE(traineeID,traineeName) VALUES (2,'Jane Bloggs');
 
 
 
