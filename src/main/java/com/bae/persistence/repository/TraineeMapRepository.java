@@ -28,7 +28,7 @@ public class TraineeMapRepository implements TraineeRepository {
 		this.getTraineeMap().put(newTrainee.getTraineeID(), newTrainee);
 		return "Added new classroom";
 	}
-	}
+
 
 	@Override
 	public String deleteTrainee(int traineeID) {
@@ -41,7 +41,7 @@ public class TraineeMapRepository implements TraineeRepository {
 			return "Trainee does not exist";
 		}
 	}
-	}
+
 
 	@Override
 	public String updateTrainee(int traineeID, String trainee) {
