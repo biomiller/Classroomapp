@@ -30,6 +30,12 @@ public class TraineeDBRepository implements TraineeRepository {
 
 		return jsonutil.getJSONForObject(manager.find(Trainee.class, traineeID));
 	}
+	
+	@Override
+	public String getAllTrainees() {
+		Query query = manager.createQuery("SELECT a FROM Trainee a", Trainee.class);
+		return jsonutil.getJSONForObject(query.getResultList());
+	}
 
 	@Override
 	@Transactional(REQUIRED)
@@ -41,6 +47,7 @@ public class TraineeDBRepository implements TraineeRepository {
 	}
 
 	@Override
+	@Transactional(REQUIRED)
 	public String deleteTrainee(int traineeID) {
 		try {
 			Trainee trainee = manager.find(Trainee.class, traineeID);
@@ -57,10 +64,6 @@ public class TraineeDBRepository implements TraineeRepository {
 		return null;
 	}
 
-	@Override
-	public String getAllTrainees() {
-		Query query = manager.createQuery("SELECT a FROM Trainee a", Trainee.class);
-		return jsonutil.getJSONForObject(query.getResultList());
-	}
+
 
 }

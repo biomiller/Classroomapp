@@ -1,5 +1,6 @@
 package com.bae.persistence.repository;
 
+import static javax.transaction.Transactional.TxType.REQUIRED;
 import static javax.transaction.Transactional.TxType.SUPPORTS;
 
 import javax.enterprise.inject.Default;
@@ -37,6 +38,7 @@ public class ClassroomDBRepository implements ClassroomRepository {
 	}
 
 	@Override
+	@Transactional(REQUIRED)
 	public String createClassroom(String classroom) {
 
 		Classroom newClassroom = jsonutil.getObjectForJSON(classroom, Classroom.class);
@@ -46,6 +48,7 @@ public class ClassroomDBRepository implements ClassroomRepository {
 	}
 
 	@Override
+	@Transactional(REQUIRED)
 	public String deleteClassroom(int classroomID) {
 		// TODO Auto-generated method stub
 		return null;
