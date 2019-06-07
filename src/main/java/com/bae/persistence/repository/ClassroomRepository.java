@@ -2,6 +2,7 @@ package com.bae.persistence.repository;
 
 public interface ClassroomRepository {
 	
+	String getAllClassrooms();
 	String getClassroom(int classroomID);
 	String createClassroom(String classroom);
 	String deleteClassroom(int classroomID);

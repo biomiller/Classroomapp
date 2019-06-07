@@ -16,6 +16,7 @@ public class Trainee {
 	private int traineeID;
 	private String traineeName;
     @ManyToOne(fetch=FetchType.LAZY)
+    @JoinColumn(name = "classroomID")
 	private Classroom classroom;
 	
 	

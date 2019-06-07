@@ -22,6 +22,13 @@ public class ClassroomEndpoint {
 		return service.getClassroom(id);
 	}
 	
+	@Path("/getAllClassrooms")
+	@GET
+	@Produces({ "application/json" })
+	public String getAllClassrooms() {
+		return service.getAllClassrooms();
+	}
+	
 	@Path("/createClassroom")
 	@POST
 	@Produces({ "application/json" })

@@ -2,6 +2,7 @@ package com.bae.business.service;
 
 public interface TraineeService {
 	
+	String getAllTrainees();
 	String getTrainee(int traineeID);
 	String createTrainee(String trainee);
 	String deleteTrainee(int traineeID);
