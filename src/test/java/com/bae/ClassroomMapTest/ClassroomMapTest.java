@@ -35,14 +35,14 @@ public class ClassroomMapTest {
 		assertTrue(2 == testCMR.getClassroomMap().size());
 	}
 
-/*	@Test
+	@Test
 	public void getClassroomTest() {
 		testCMR.createClassroom(Constants.CLASS1);
 		testCMR.createClassroom(Constants.CLASS2);
 
 		assertEquals(Constants.CLASS1, testCMR.getClassroom(1));
 
-	}*/
+	}
 
 	@Test
 	public void deleteClassroomTest() {
