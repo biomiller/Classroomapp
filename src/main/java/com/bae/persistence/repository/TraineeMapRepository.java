@@ -21,6 +21,13 @@ public class TraineeMapRepository implements TraineeRepository {
 	public String getTrainee(int traineeID) {
 		return jsonutil.getJSONForObject(this.getTraineeMap().get(traineeID));
 	}
+	
+	@Override
+	public String getAllTrainees() {
+		String allTrainees = jsonutil.getJSONForObject(this.getTraineeMap());
+		
+		return allTrainees;
+	}
 
 	@Override
 	public String createTrainee(String trainee) {
@@ -45,18 +52,15 @@ public class TraineeMapRepository implements TraineeRepository {
 
 	@Override
 	public String updateTrainee(int traineeID, String trainee) {
-		// TODO Auto-generated method stub
-		return null;
+		Trainee newTrainee = jsonutil.getObjectForJSON(trainee, Trainee.class);
+		this.getTraineeMap().put(traineeID, newTrainee);
+		return "Trainee Updated";
 	}
 
 	public Map<Integer, Trainee> getTraineeMap() {
 		return traineeMap;
 	}
 
-	@Override
-	public String getAllTrainees() {
-		// TODO Auto-generated method stub
-		return null;
-	}
+
 
 }

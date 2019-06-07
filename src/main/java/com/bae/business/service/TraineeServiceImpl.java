@@ -21,14 +21,14 @@ public class TraineeServiceImpl implements TraineeService {
 
 	@Override
 	public String deleteTrainee(int traineeID) {
-		// TODO Auto-generated method stub
-		return null;
+		return repo.deleteTrainee(traineeID);
+
 	}
 
 	@Override
 	public String updateTrainee(int traineeID, String trainee) {
-		// TODO Auto-generated method stub
-		return null;
+		return repo.updateTrainee(traineeID, trainee);
+
 	}
 
 	@Override

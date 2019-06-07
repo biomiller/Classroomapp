@@ -19,6 +19,13 @@ public class ClassroomMapRepository implements ClassroomRepository {
 	public String getClassroom(int classroomID) {
 		return jsonutil.getJSONForObject(this.getClassroomMap().get(classroomID));
 	}
+	
+	@Override
+	public String getAllClassrooms() {
+		String AllClassrooms = jsonutil.getJSONForObject(this.getClassroomMap());
+		
+		return AllClassrooms;
+	}
 
 	@Override
 	public String createClassroom(String classroom) {
@@ -41,18 +48,16 @@ public class ClassroomMapRepository implements ClassroomRepository {
 
 	@Override
 	public String updateClassroom(int classroomID, String classroom) {
-		// TODO Auto-generated method stub
-		return null;
+		Classroom newClassroom = jsonutil.getObjectForJSON(classroom, Classroom.class);
+		this.getClassroomMap().put(classroomID, newClassroom);
+		
+		return "Classroom updated";
 	}
 
 	public Map<Integer, Classroom> getClassroomMap() {
 		return classroomMap;
 	}
 
-	@Override
-	public String getAllClassrooms() {
-		// TODO Auto-generated method stub
-		return null;
-	}
+
 
 }
