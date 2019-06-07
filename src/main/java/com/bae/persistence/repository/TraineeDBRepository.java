@@ -1,5 +1,6 @@
 package com.bae.persistence.repository;
 
+import static javax.transaction.Transactional.TxType.REQUIRED;
 import static javax.transaction.Transactional.TxType.SUPPORTS;
 
 import javax.enterprise.inject.Default;
@@ -28,9 +29,12 @@ public class TraineeDBRepository implements TraineeRepository {
 	}
 
 	@Override
+	@Transactional(REQUIRED)
 	public String createTrainee(String trainee) {
-		// TODO Auto-generated method stub
-		return null;
+
+		Trainee newTrainee = jsonutil.getObjectForJSON(trainee, Trainee.class);
+		manager.persist(newTrainee);
+		return "{\"message\": \"trainee has been successfully added\"}";
 	}
 
 	@Override
