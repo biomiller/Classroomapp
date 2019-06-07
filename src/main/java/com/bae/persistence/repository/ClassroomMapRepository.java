@@ -26,14 +26,21 @@ public class ClassroomMapRepository implements ClassroomRepository {
 
 	@Override
 	public String createClassroom(String classroom) {
-		// TODO Auto-generated method stub
-		return null;
+		Classroom newClassroom = jsonutil.getObjectForJSON(classroom, Classroom.class);
+		this.getClassroomMap().put(newClassroom.getClassroomID(), newClassroom);
+		return "Added new classroom";
 	}
 
 	@Override
 	public String deleteClassroom(int classroomID) {
-		// TODO Auto-generated method stub
-		return null;
+		if(this.getClassroomMap().containsKey(classroomID)) {
+			this.getClassroomMap().remove(classroomID);
+			return "Classroom with ID " + classroomID + " removed.";
+		}
+		
+		else {
+			return "Classroom does not exist";
+		}
 	}
 
 	@Override
