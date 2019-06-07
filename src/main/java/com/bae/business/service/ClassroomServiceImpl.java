@@ -22,14 +22,12 @@ public class ClassroomServiceImpl implements ClassroomService {
 
 	@Override
 	public String deleteClassroom(int classroomID) {
-		// TODO Auto-generated method stub
-		return null;
+		return repo.deleteClassroom(classroomID);
 	}
 
 	@Override
 	public String updateClassroom(int classroomID, String classroom) {
-		// TODO Auto-generated method stub
-		return null;
+		return repo.updateClassroom(classroomID, classroom);
 	}
 
 	@Override
