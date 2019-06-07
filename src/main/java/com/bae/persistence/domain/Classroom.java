@@ -1,9 +1,13 @@
 package com.bae.persistence.domain;
 
+import java.util.HashSet;
+import java.util.Set;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 
 @Entity
 public class Classroom {
@@ -12,7 +16,8 @@ public class Classroom {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int classroomID;
 	private String trainer;
-	private String trainees;
+	@OneToMany(mappedBy="classroom",cascade=CascadeType.ALL)
+	private Set<Trainee> trainees = new HashSet<Trainee>();
 	
 	// default constructor
 	
@@ -20,18 +25,15 @@ public class Classroom {
 		super();
 	}
 	
-	public Classroom(int classroomID, String trainer, String trainees) {
+	
+	public Classroom(int classroomID, String trainer, Set<Trainee> trainees) {
+		super();
 		this.classroomID = classroomID;
 		this.trainer = trainer;
 		this.trainees = trainees;
 	}
 
-	
-	
-	
-	
-	
-	
+
 	public int getClassroomID() {
 		return classroomID;
 	}
