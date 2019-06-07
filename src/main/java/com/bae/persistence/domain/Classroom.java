@@ -17,7 +17,7 @@ public class Classroom {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int classroomID;
 	private String trainer;
-	@OneToMany(mappedBy="classroom",cascade=CascadeType.ALL)
+	@OneToMany(mappedBy="classroomID",cascade=CascadeType.ALL)
 	private Set<Trainee> trainees = new HashSet<Trainee>();
 	
 	// default constructor

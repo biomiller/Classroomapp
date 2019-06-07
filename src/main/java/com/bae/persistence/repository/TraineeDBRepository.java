@@ -32,8 +32,8 @@ public class TraineeDBRepository implements TraineeRepository {
 	@Transactional(REQUIRED)
 	public String createTrainee(String trainee) {
 
-		Trainee atrainee = jsonutil.getObjectForJSON(trainee, Trainee.class);
-		manager.persist(atrainee);
+		Trainee newTrainee = jsonutil.getObjectForJSON(trainee, Trainee.class);
+		manager.persist(newTrainee);
 		return "{\"message\": \"trainee has been successfully added\"}";
 	}
 
