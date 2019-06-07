@@ -1,9 +1,11 @@
 package com.bae.persistence.domain;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 
 @Entity
 public class Trainee {
@@ -12,6 +14,8 @@ public class Trainee {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int traineeID;
 	private String traineeName;
+	@ManyToOne (cascade=CascadeType.ALL)
+	private Classroom classroom;
 	
 	
 	// default constructor
