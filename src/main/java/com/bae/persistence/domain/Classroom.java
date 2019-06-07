@@ -3,12 +3,12 @@ package com.bae.persistence.domain;
 import java.util.HashSet;
 import java.util.Set;
 
-import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
+
 
 @Entity
 public class Classroom {
@@ -17,7 +17,7 @@ public class Classroom {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int classroomID;
 	private String trainer;
-	@OneToMany(mappedBy="classroomID",cascade=CascadeType.ALL)
+	@OneToMany(mappedBy="classroom")
 	private Set<Trainee> trainees = new HashSet<Trainee>();
 	
 	// default constructor
@@ -27,11 +27,11 @@ public class Classroom {
 	}
 	
 	
-	public Classroom(int classroomID, String trainer, Set<Trainee> trainees) {
+	public Classroom(int classroomID, String trainer) {
 		super();
 		this.classroomID = classroomID;
 		this.trainer = trainer;
-		this.trainees = trainees;
+		//this.trainees = trainees;
 	}
 
 
