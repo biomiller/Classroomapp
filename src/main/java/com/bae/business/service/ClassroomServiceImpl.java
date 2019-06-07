@@ -17,8 +17,7 @@ public class ClassroomServiceImpl implements ClassroomService {
 
 	@Override
 	public String createClassroom(String classroom) {
-		// TODO Auto-generated method stub
-		return null;
+		return repo.createClassroom(classroom);
 	}
 
 	@Override

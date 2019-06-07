@@ -11,7 +11,6 @@ import javax.persistence.Query;
 import javax.transaction.Transactional;
 
 import com.bae.persistence.domain.Classroom;
-import com.bae.persistence.domain.Trainee;
 import com.bae.util.JSONUtil;
 
 @Default
