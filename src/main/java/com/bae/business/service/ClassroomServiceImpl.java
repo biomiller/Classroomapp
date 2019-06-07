@@ -1,11 +1,18 @@
 package com.bae.business.service;
 
+import javax.inject.Inject;
+
+import com.bae.persistence.repository.ClassroomRepository;
+
+
 public class ClassroomServiceImpl implements ClassroomService {
+	
+	@Inject
+	ClassroomRepository repo;
 
 	@Override
 	public String getClassroom(int classroomID) {
-		// TODO Auto-generated method stub
-		return null;
+		return repo.getClassroom(classroomID);
 	}
 
 	@Override
@@ -24,6 +31,12 @@ public class ClassroomServiceImpl implements ClassroomService {
 	public String updateClassroom(int classroomID, String classroom) {
 		// TODO Auto-generated method stub
 		return null;
+	}
+
+	@Override
+	public String getAllClassrooms() {
+		return repo.getAllClassrooms();
+
 	}
 
 }

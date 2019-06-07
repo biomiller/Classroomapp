@@ -3,21 +3,17 @@ package com.bae.persistence.repository;
 import java.util.HashMap;
 import java.util.Map;
 
+import javax.enterprise.inject.Alternative;
+
 import com.bae.persistence.domain.Classroom;
 import com.bae.util.JSONUtil;
 
-
+@Alternative
 public class ClassroomMapRepository implements ClassroomRepository {
-	
-	
+
 	private Map<Integer, Classroom> classroomMap = new HashMap<Integer, Classroom>();
-	
 
 	JSONUtil jsonutil = new JSONUtil();
-	
-
-
-
 
 	@Override
 	public String getClassroom(int classroomID) {
@@ -33,11 +29,11 @@ public class ClassroomMapRepository implements ClassroomRepository {
 
 	@Override
 	public String deleteClassroom(int classroomID) {
-		if(this.getClassroomMap().containsKey(classroomID)) {
+		if (this.getClassroomMap().containsKey(classroomID)) {
 			this.getClassroomMap().remove(classroomID);
 			return "Classroom with ID " + classroomID + " removed.";
 		}
-		
+
 		else {
 			return "Classroom does not exist";
 		}
@@ -48,11 +44,15 @@ public class ClassroomMapRepository implements ClassroomRepository {
 		// TODO Auto-generated method stub
 		return null;
 	}
-	
-	
-	
+
 	public Map<Integer, Classroom> getClassroomMap() {
 		return classroomMap;
+	}
+
+	@Override
+	public String getAllClassrooms() {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 }

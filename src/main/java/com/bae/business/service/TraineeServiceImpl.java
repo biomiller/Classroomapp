@@ -16,8 +16,7 @@ public class TraineeServiceImpl implements TraineeService {
 
 	@Override
 	public String createTrainee(String trainee) {
-		// TODO Auto-generated method stub
-		return null;
+		return repo.createTrainee(trainee);
 	}
 
 	@Override
@@ -30,6 +29,12 @@ public class TraineeServiceImpl implements TraineeService {
 	public String updateTrainee(int traineeID, String trainee) {
 		// TODO Auto-generated method stub
 		return null;
+	}
+
+	@Override
+	public String getAllTrainees() {
+		return repo.getAllTrainees();
+
 	}
 
 }
